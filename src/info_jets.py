@@ -30,5 +30,5 @@ class InfoJets(BaseAPIClass):
         return None
 
     @staticmethod
-    def get_sorted_airplanes(airplanes: list[Airplane]):
+    def sort_by_altitude(airplanes: list[Airplane]):
         return sorted(airplanes, key=lambda x: (x.altitude is not None, x.altitude), reverse=True)

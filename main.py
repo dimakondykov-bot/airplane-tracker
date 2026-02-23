@@ -1,5 +1,6 @@
 from src.country_coord import CountryCoord
 from src.info_jets import InfoJets
+from src.json_file_handler import JsonFileHandler
 
 
 def main():
@@ -25,20 +26,25 @@ def main():
         if airplane.country_registration == country_en:
             airplane_by_country_registration.append(airplane)
 
-    airplanes = jets_handler.get_sorted_airplanes(airplane_by_country_registration)
+    airplanes = jets_handler.sort_by_altitude(airplane_by_country_registration)
 
     while True:
         n = input("Введите max самолётов в ответе: ")
 
         try:
             n = int(n)
-            if 0 < n > len(airplanes):
+            if 0 < n < len(airplanes):
                 break
             print(f"Число вне диапазона: {len(airplanes)}")
         except ValueError:
             print("Не число")
 
-    for airplane in airplanes[:n]:
+    airplanes = airplanes[:n]
+
+    json_file_handler = JsonFileHandler('data/airplanes.json')
+    json_file_handler.save(airplanes)
+
+    for airplane in airplanes:
         print(airplane.to_dict())
 
 
