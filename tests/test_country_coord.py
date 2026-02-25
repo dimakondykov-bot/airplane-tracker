@@ -29,7 +29,7 @@ def test_search_by_address_happy_path():
     coord = CountryCoord()
     coord.session = DummySession(DummyResponse(fake_api_response))
 
-    result = coord.search_by_address("Testland")
+    result = coord.get("Testland")
 
     assert result is not None
     coords, country = result

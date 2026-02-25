@@ -5,7 +5,7 @@ from models.airplane import Airplane
 
 class AbstractFileHandler(ABC):
     def __init__(self, path: str):
-        self.path = path
+        self._path = path
 
     @abstractmethod
     def save(self, airplanes: list[Airplane]):
@@ -14,5 +14,10 @@ class AbstractFileHandler(ABC):
     @abstractmethod
     def load(self, airplanes: list[Airplane]):
         pass
+
+    @abstractmethod
+    def clear(self):
+        pass
+
 
 

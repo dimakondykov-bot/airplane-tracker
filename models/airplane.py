@@ -1,4 +1,13 @@
 class Airplane:
+    __slots__ = [
+        'latitude',
+        'longitude',
+        'altitude',
+        'velocity',
+        'callsign',
+        'country_registration',
+    ]
+
     def __init__(self,
                  country_registration: str,
                  callsign: str,

@@ -10,7 +10,7 @@ def main():
         country = input("Введите название страны: ")
 
         country_coord_handler = CountryCoord()
-        coords, country_en = country_coord_handler.search_by_address(country)
+        coords, country_en = country_coord_handler.get(country)
 
         if coords is not None:
             break
@@ -18,7 +18,7 @@ def main():
         print("Такой страны не существует или данных по стране нет")
 
     jets_handler = InfoJets()
-    airplanes = jets_handler.get_airplanes(coords)
+    airplanes = jets_handler.get(coords)
 
     airplane_by_country_registration = []
 
@@ -41,7 +41,7 @@ def main():
 
     airplanes = airplanes[:n]
 
-    json_file_handler = JsonFileHandler('data/airplanes.json')
+    json_file_handler = JsonFileHandler()
     json_file_handler.save(airplanes)
 
     for airplane in airplanes:

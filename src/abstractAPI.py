@@ -11,3 +11,7 @@ class BaseAPIClass(ABC):
         self.base_url = base_url
         self.api_key = api_key
         self.session = requests.Session()
+
+    @abstractmethod
+    def get(self, data):
+        pass

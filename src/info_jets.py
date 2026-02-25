@@ -9,7 +9,7 @@ class InfoJets(BaseAPIClass):
     def __init__(self, base_url: str = 'https://opensky-network.org/api/states/all') -> None:
         super().__init__(base_url)
 
-    def get_airplanes(self, country_coords: dict[str, float]):
+    def get(self, country_coords: dict[str, float]):
         response = requests.get(self.base_url, params=country_coords)
 
         if response.ok:

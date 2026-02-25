@@ -10,7 +10,7 @@ class CountryCoord(BaseAPIClass):
         super().__init__(base_url)
         self.format_data = 'json'
 
-    def search_by_address(self, address) -> tuple[dict[str, float], Any] | None:
+    def get(self, address):
         """Функция для получения адреса"""
 
         params = {
