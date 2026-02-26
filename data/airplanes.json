@@ -1,0 +1,82 @@
+[
+  {
+    "country_registration": "United States",
+    "callsign": "N328LM  ",
+    "latitude": 36.061,
+    "longitude": 132.7358,
+    "altitude": 14317.98,
+    "velocity": 214.34
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N7799T  ",
+    "latitude": 25.4459,
+    "longitude": 121.7538,
+    "altitude": 13716,
+    "velocity": 255.15
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N699FB  ",
+    "latitude": 6.0419,
+    "longitude": 111.9463,
+    "altitude": 13716,
+    "velocity": 242.51
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N145QS  ",
+    "latitude": 57.1053,
+    "longitude": -148.4492,
+    "altitude": 13708.38,
+    "velocity": 262.73
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N137BB  ",
+    "latitude": 29.546,
+    "longitude": -82.3453,
+    "altitude": 13106.4,
+    "velocity": 231.16
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N202KR  ",
+    "latitude": 36.1138,
+    "longitude": 13.8067,
+    "altitude": 13106.4,
+    "velocity": 234.68
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N730EA  ",
+    "latitude": 8.8046,
+    "longitude": 106.0805,
+    "altitude": 13106.4,
+    "velocity": 237.67
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "CTF684  ",
+    "latitude": 29.0007,
+    "longitude": -83.1504,
+    "altitude": 13106.4,
+    "velocity": 162.9
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "POD1    ",
+    "latitude": 26.9799,
+    "longitude": -82.2682,
+    "altitude": 13037.82,
+    "velocity": 177.18
+  },
+  {
+    "country_registration": "United States",
+    "callsign": "N1PG    ",
+    "latitude": 37.4335,
+    "longitude": 18.172,
+    "altitude": 12877.8,
+    "velocity": 276.3
+  }
+]
