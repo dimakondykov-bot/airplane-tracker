@@ -1,4 +1,6 @@
 class Airplane:
+    """класс описывает набор характеристик самолёта"""
+
     __slots__ = [
         'latitude',
         'longitude',
@@ -19,9 +21,9 @@ class Airplane:
 
         if (
                 not type(latitude) == float
-                and not type(longitude) == float
-                and not type(altitude) == float
-                and not type(velocity) == float
+                or not type(longitude) == float
+                or not type(altitude) == float
+                or not type(velocity) == float
         ):
             raise TypeError('Latitude и longitude mдолжны быть флоат float')
 
@@ -33,12 +35,14 @@ class Airplane:
         self.country_registration = country_registration
 
     def __eq__(self, other):
-        """Сравнение по высоте и долготе"""
+        """функция сравнения двух самолётов: Если other не является объектом Airplane — сразу False"""
+
         if not isinstance(other, Airplane):
             return False
         return self.velocity == other.velocity and self.altitude == other.altitude
 
     def to_dict(self):
+        """Функция преобразует объект Airplane в обычный словарь dict"""
         return {
             'country_registration': self.country_registration,
             'callsign': self.callsign,
@@ -50,6 +54,7 @@ class Airplane:
 
     @classmethod
     def from_dict(cls, data: dict):
+        """Функция принимает словарь data и создаёт новый объект Airplane"""
         return cls(
             data['country_registration'],
             data['callsign'],

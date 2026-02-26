@@ -4,7 +4,7 @@ from src.abstractAPI import BaseAPIClass
 
 
 class CountryCoord(BaseAPIClass):
-    """Функция для получения координат страны"""
+    """класс для получения координат страны"""
 
     def __init__(self, base_url: str = 'https://nominatim.openstreetmap.org/search'):
         super().__init__(base_url)

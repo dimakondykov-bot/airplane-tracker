@@ -4,12 +4,13 @@ from src.abstractAPI import BaseAPIClass
 
 
 class InfoJets(BaseAPIClass):
-    """Функция для отслеживания трекера самолётов"""
+    """класс для отслеживания трекера самолётов"""
 
     def __init__(self, base_url: str = 'https://opensky-network.org/api/states/all') -> None:
         super().__init__(base_url)
 
     def get(self, country_coords: dict[str, float]):
+        """Функция получает координаты страны и преобразует их в json файл"""
         response = requests.get(self.base_url, params=country_coords)
 
         if response.ok:
@@ -31,4 +32,5 @@ class InfoJets(BaseAPIClass):
 
     @staticmethod
     def sort_by_altitude(airplanes: list[Airplane]):
+        """Сортировка самолётов по высоте полёта"""
         return sorted(airplanes, key=lambda x: (x.altitude is not None, x.altitude), reverse=True)

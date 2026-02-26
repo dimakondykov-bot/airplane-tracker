@@ -6,15 +6,18 @@ from src.abstractFileHandler import AbstractFileHandler
 
 
 class JsonFileHandler(AbstractFileHandler):
+    """ класс обработки JSON‑файла"""
 
     def __init__(self, file_path: str = 'data/airplanes.json'):
         super().__init__(file_path)
 
     def save(self, airplanes: list[Airplane]):
+        """Сохраняет список объектов Airplane в JSON‑файл"""
         with open(self._path, 'w') as f:
             json.dump([airplane.to_dict() for airplane in airplanes], f)
 
     def load(self, airplanes: list[Airplane]):
+        """Загружает данные из JSON‑файла и преобразует их в объекты Airplane"""
         if not os.path.exists(self._path):
             raise FileNotFoundError('Файл не существует')
 
@@ -24,5 +27,6 @@ class JsonFileHandler(AbstractFileHandler):
             return [Airplane.from_dict(plane) for plane in data]
 
     def clear(self):
+        """Очищает JSON‑файл, записывая в него пустой список"""
         with open(self._path, 'w', encoding='utf-8') as f:
             json.dump([], f)

@@ -15,9 +15,4 @@ class AbstractFileHandler(ABC):
     def load(self, airplanes: list[Airplane]):
         pass
 
-    @abstractmethod
-    def clear(self):
-        pass
-
-
 
